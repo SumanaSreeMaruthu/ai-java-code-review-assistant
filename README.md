@@ -1,29 +1,18 @@
-# AI Java Code Review Assistant
+# Java Code Review
 
-Java 21 / Spring Boot portfolio starter by [Sumana Sree Maruthu](https://github.com/SumanaSreeMaruthu).
+Java 21 / Spring Boot portfolio demonstration.
 
-> **Status: starter implementation.** This repository includes a working in-memory REST API, validation, Docker configuration and a basic test. Gemini, production AI agents, Kafka, database persistence, authentication and frontend features are **not implemented**.
+## Implemented
+- Persistent H2/JPA records
+- REST create, list, get, delete endpoints at `/api/v1/reviews`
+- Browser interface at `http://localhost:8080/`
+- Input validation, Dockerfile, basic context test and CI workflow
 
 ## Run
-Requires Java 21 and Maven 3.9+.
-
 ```bash
 mvn spring-boot:run
 mvn test
 ```
 
-## API
-```bash
-curl -X POST http://localhost:8080/api/v1/reviews -H 'Content-Type: application/json' -d '{"sourceCode":"example"}'
-curl http://localhost:8080/api/v1/reviews
-```
-
-## Roadmap
-- [ ] Add PostgreSQL persistence and migrations
-- [ ] Add service/repository layers and integration tests
-- [ ] Add Spring Security authentication and authorization
-- [ ] Build an Angular or React frontend
-- [ ] Add observability, deployment and documentation
-- [ ] Integrate appropriate Gemini/AI or Kafka capabilities where applicable
-
-Do not use real customer or employer data in this demonstration.
+## Limitations
+Static heuristic only; no LLM integration yet. This is **not** a production-ready end-to-end system. No React frontend, security, Kafka, Gemini, GitHub API integration or comprehensive integration tests have been implemented. Build has not been independently verified. Use only synthetic input.
