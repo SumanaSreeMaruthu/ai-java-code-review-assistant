@@ -40,4 +40,10 @@ public class ReviewService {
         repository.deleteById(id);
     }
 
+    public List<ReviewRecord> search(String value) {
+        if (value == null || value.isBlank()) {
+            return repository.findAll();
+        }
+        return repository.findBySourceCodeContainingIgnoreCase(value.trim());
+    }
 }
